@@ -4,7 +4,6 @@ public class App {
         Keyboard input = new Keyboard();
         VirtualPet pet1 = new VirtualPet("Dog", "Ace", 50, 50, 50, 50, 50);
         RoboticPet pet2 = new RoboticPet("Cat", "Annie", 50, 50, 50, 50, 50);
-        AddPet.setPetKey(3)
         petShelter.addNewPet(pet1);
         petShelter.addNewPet(pet2);
         // Pet newPet= new Pet();
@@ -12,15 +11,16 @@ public class App {
         while (true) {
             VirtualPet pet3 = new VirtualPet(null, null, 0, 0, 0, 0, 0);
             RoboticPet pet4 = new RoboticPet(null, null, 0, 0, 0, 0, 0);
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             petShelter.displayPets();
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             System.out.println("0. Exit Application");
-            System.out.println("1. Put Pets to Sleep");
-            System.out.println("2. Play with pet");
+            System.out.println("1. Put All Pets to Sleep");
+            System.out.println("2. Play with All Pets");
             System.out.println("3. Pick a pet");
             System.out.println("4. Adopt a pet");
             System.out.println("5. Admit a Virtual pet");
             System.out.println("6. Admit a Robotic pet");
-
             System.out.println("What would you like to do next?");
             int option = input.keyboardInt();
             switch (option) {
@@ -39,7 +39,7 @@ public class App {
                     break;
                 }
                 case 4: {
-                    petShelter.adoptPet(input.keyboardInt());
+                    petShelter.adoptPet(0);
                     break;
                 }
                 case 5: {
