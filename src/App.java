@@ -41,8 +41,8 @@ public class App {
                 }
                 case 5: {
                     AddPet addPet = new AddPet();
-                    addPet.AddNewPet();
-                    
+                    Pet pet = addPet.AddNewPet();
+                    petShelter.addNewPet(pet);
                     break;
                 }
                 default: {

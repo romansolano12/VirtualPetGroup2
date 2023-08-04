@@ -6,33 +6,38 @@ public class AddPet {
     /*
      * Add Pet Menu
      */
-    public void AddNewPet() {
+    public Pet AddNewPet() {
         boolean menu = true;
-        while (menu) {
-            System.out.println("Which type of pet would you like to add? ");
-            System.out.println("0. Quit");
-            System.out.println("1. Virtual Pet");
-            System.out.println("2. Robotic Pet");
-            int option = input.keyboardInt();
-            switch (option) {
-                case 0: {
-                    menu = false;
-                    break;
-                }
-                case 1: {
-                    NewVirtualPet();
-                    menu = false;
-                    break;
-                }
-                case 2: {
-                    NewRoboticPet();
-                    break;
-                }
-                default: {
-                    System.out.println("Please enter a value from 0 to 2.");
-                }
-            }
-        }
+return NewVirtualPet();
+        // Pet pet;
+        // while (menu) {
+        //     System.out.println("Which type of pet would you like to add? ");
+        //     System.out.println("0. Quit");
+        //     System.out.println("1. Virtual Pet");
+        //     System.out.println("2. Robotic Pet");
+        //     int option = input.keyboardInt();
+        //     switch (option) {
+        //         case 0: {
+        //             menu = false;
+        //             break;
+        //         }
+        //         case 1: {
+        //             pet= NewVirtualPet();
+        //             menu=false;
+        //             break;
+                    
+        //         }
+        //         case 2: {
+        //             pet= NewRoboticPet();
+        //         menu=false;
+        //         break;
+        //         }
+        //         default: {
+        //             System.out.println("Please enter a value from 0 to 2.");
+        //         }
+        //     }
+        //     return pet;
+        // }
         
     }
 
