@@ -36,7 +36,7 @@ public class RoboticPet extends Pet {
 
     @Override
     public String toString(){
-        return getPetKey() + getPetType() +"\tName: "+getPetName()+"\tHealth: "+getPetHealth()+ "\tHappiness: "+getPetHappiness()+"\tSleep: "+getPetSleep() + "\tMaintenance: "+petMaintenance
-        + "\tOil Level: "+petOilLevel;
+        return "| Key: " + getPetKey() + "\t| Pet Type: Robotic " + getPetType() +"\t| Name: "+getPetName()+"\t| Health: "+getPetHealth()+ "\t| Happiness: "+getPetHappiness()+"\t| Sleep: "+getPetSleep() + "\t| Maintenance: "+petMaintenance
+        + "\t| Oil Level: "+petOilLevel + " |\n";
     }
 }

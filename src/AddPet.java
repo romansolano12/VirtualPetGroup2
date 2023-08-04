@@ -1,13 +1,11 @@
 
 public class AddPet {
     String petType;
-    static int petKey = 1;
     Keyboard input = new Keyboard();
 
-    public static void setPetKey(int value) {
-        petKey = value;
-    }
-
+    /*
+     * Add Pet Menu
+     */
     public void AddNewPet() {
         boolean menu = true;
         while (menu) {
@@ -28,7 +26,6 @@ public class AddPet {
                 }
                 case 2: {
                     NewRoboticPet();
-                    menu = false;
                     break;
                 }
                 default: {
@@ -36,10 +33,10 @@ public class AddPet {
                 }
             }
         }
+        
     }
 
     public void CatOrDog() {
-
         System.out.println("What type of pet would you like to add? ");
         System.out.println("1. Dog");
         System.out.println("2. Cat");
@@ -65,8 +62,9 @@ public class AddPet {
         int petSleep = 50;
         int petHunger = 50;
         int petThirst = 50;
-        VirtualPet newPet = new VirtualPet( petType, petName, petHealth, petHappiness, petSleep, petHunger,
+        VirtualPet newPet = new VirtualPet(petType, petName, petHealth, petHappiness, petSleep, petHunger,
                 petThirst);
+        
         return newPet;
     }
 
@@ -81,7 +79,7 @@ public class AddPet {
         int petSleep = 50;
         int petOilLevel = 50;
         int petMaintenance = 50;
-        RoboticPet newPet = new RoboticPet( petType, petName, petHealth, petHappiness, petSleep, petOilLevel,
+        RoboticPet newPet = new RoboticPet(petType, petName, petHealth, petHappiness, petSleep, petOilLevel,
                 petMaintenance);
         return newPet;
     }
