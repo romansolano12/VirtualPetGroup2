@@ -4,7 +4,7 @@ public class App {
         Keyboard input = new Keyboard();
         VirtualPet pet1 = new VirtualPet("Dog", "Ace", 50, 50, 50, 50, 50);
         RoboticPet pet2 = new RoboticPet("Cat", "Annie", 50, 50, 50, 50, 50);
-        
+        Pet pet;
         petShelter.addNewPet(pet1);
         petShelter.addNewPet(pet2);
         // Pet newPet= new Pet();
@@ -24,6 +24,17 @@ public class App {
 
             System.out.println("What would you like to do next?");
             int option = input.keyboardInt();
+            int keyValue = -1;
+            while (option == 3 || option == 4) {
+                petShelter.displayPets();
+                System.out.println("pick a pet number");
+                keyValue = input.keyboardInt();
+                pet = petShelter.getPet(keyValue);
+                if (pet != null) {
+                    break;
+                }
+                System.out.println("I cant find this pet try again");
+            }
             switch (option) {
                 case 0: {
                     break;
@@ -40,7 +51,7 @@ public class App {
                     break;
                 }
                 case 4: {
-                    petShelter.adoptPet(input.keyboardInt());
+                    petShelter.adoptPet(keyValue);
                     break;
                 }
                 case 5: {

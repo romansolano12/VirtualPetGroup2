@@ -13,7 +13,9 @@ Keyboard input = new Keyboard();
         System.out.println(pet);
     }
     }
-
+    public Pet getPet(int keyValue){
+        return this.displayPets.get(keyValue);
+    }
     public void addNewPet(Pet addVirtualOrRoboticPet) {
         this.displayPets.put(addVirtualOrRoboticPet.getPetKey(), addVirtualOrRoboticPet);
     }
@@ -29,8 +31,6 @@ Keyboard input = new Keyboard();
     }
     public void adoptPet(int petKey){
         displayPets();
-        System.out.println("Choose a pet From the List: ");
-        petKey = input.keyboardInt();
         this.displayPets.remove(petKey);
     }
     public void tick(){
