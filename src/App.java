@@ -4,14 +4,15 @@ public class App {
         Keyboard input = new Keyboard();
         VirtualPet pet1 = new VirtualPet("Dog", "Ace", 50, 50, 50, 50, 50);
         RoboticPet pet2 = new RoboticPet("Cat", "Annie", 50, 50, 50, 50, 50);
-        AddPet.setPetKey(3)
+        
         petShelter.addNewPet(pet1);
         petShelter.addNewPet(pet2);
         // Pet newPet= new Pet();
 
         while (true) {
-            VirtualPet pet3 = new VirtualPet(null, null, 0, 0, 0, 0, 0);
-            RoboticPet pet4 = new RoboticPet(null, null, 0, 0, 0, 0, 0);
+            petShelter.tick();
+            VirtualPet virtualPet = new VirtualPet(null, null, 0, 0, 0, 0, 0);
+            RoboticPet roboticPet = new RoboticPet(null, null, 0, 0, 0, 0, 0);
             petShelter.displayPets();
             System.out.println("0. Exit Application");
             System.out.println("1. Put Pets to Sleep");
@@ -44,14 +45,14 @@ public class App {
                 }
                 case 5: {
                     AddPet addPet = new AddPet();
-                    pet3 = addPet.NewVirtualPet();
-                    petShelter.addNewPet(pet3);
+                    virtualPet = addPet.NewVirtualPet();
+                    petShelter.addNewPet(virtualPet);
                     break;
                 }
                 case 6: {
                     AddPet addPet = new AddPet();
-                    pet4 = addPet.NewRoboticPet();
-                    petShelter.addNewPet(pet4);
+                    roboticPet = addPet.NewRoboticPet();
+                    petShelter.addNewPet(roboticPet);
                     break;
                 }
                 default: {

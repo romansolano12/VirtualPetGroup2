@@ -82,4 +82,9 @@ public abstract class Pet {
         petHappiness++;
         petHealth++;
     }
+    public void tick(){
+        petHappiness--;
+        petHealth--;
+        petSleep--;
+    }
 }

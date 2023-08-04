@@ -33,4 +33,9 @@ Keyboard input = new Keyboard();
         petKey = input.keyboardInt();
         this.displayPets.remove(petKey);
     }
+    public void tick(){
+        for(Pet allPets : displayPets.values()){
+            allPets.tick();
+        }
+    }
 }
