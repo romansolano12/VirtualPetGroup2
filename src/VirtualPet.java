@@ -35,6 +35,6 @@ public class VirtualPet extends Pet {
     }
     @Override
     public String toString(){
-        return getPetKey() + getPetType() + "\tName: "+ getPetName()+"\tHealth: "+getPetHealth()+"\tSleep: "+getPetSleep()+"\tHunger: "+petHunger+"\tThirst: "+petThirst;
+        return "| Key: " + getPetKey()+"\t| Pet Type: Virtual " + getPetType() + "\t| Name: "+ getPetName()+"\t| Health: "+getPetHealth()+"\t| Happiness: "+getPetHappiness()+"\t| Sleep: "+getPetSleep()+"\t| Hunger: "+petHunger+"\t\t| Thirst: "+petThirst + "\t| \n";
     }
 }

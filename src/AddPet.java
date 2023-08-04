@@ -1,12 +1,8 @@
 
 public class AddPet {
     String petType;
-    static int petKey = 1;
     Keyboard input = new Keyboard();
 
-    public static void setPetKey(int value) {
-        petKey = value;
-    }
 
     public void AddNewPet() {
         boolean menu = true;
