@@ -4,7 +4,7 @@ import java.util.Map;
 
 public class PetShelter {
     private Map<Integer, Pet> displayPets = new HashMap<Integer, Pet>();
-
+Keyboard input = new Keyboard();
     public Collection<Pet> getAllPets() {
         return displayPets.values();
     }
@@ -27,8 +27,10 @@ public class PetShelter {
     public void PlayWithPet(){
 
     }
-    public void adoptPet(){
-
+    public void adoptPet(int petKey){
+        displayPets();
+        System.out.println("Choose a pet From the List: ");
+        petKey = input.keyboardInt();
+        this.displayPets.remove(petKey);
     }
-
 }

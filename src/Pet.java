@@ -58,7 +58,7 @@ public abstract class Pet {
         this.petSleep = petSleep;
     }
 
-    public Pet(String petType, String petName, int petHealth, int petHappiness, int petSleep) {
+    public Pet( String petType, String petName, int petHealth, int petHappiness, int petSleep) {
         this.petKey = petCounter++;
         this.petType = petType;
         this.petName = petName;

@@ -6,15 +6,16 @@ public class App {
         RoboticPet pet2 = new RoboticPet("Cat", "Annie", 50, 50, 50, 50, 50);
         petShelter.addNewPet(pet1);
         petShelter.addNewPet(pet2);
+        // Pet newPet= new Pet();
         
         
         while (true) {
-            
+
             petShelter.displayPets();
             System.out.println("0. Exit Application");
-            System.out.println("1. Feed pets");
-            System.out.println("2. Put Pets to Sleep");
-            System.out.println("3. Play with pet");
+            System.out.println("1. Put Pets to Sleep");
+            System.out.println("2. Play with pet");
+            System.out.println("3. Pick a pet");
             System.out.println("4. Adopt a pet");
             System.out.println("5. Admit a pet");
             System.out.println("What would you like to do next?");
@@ -24,25 +25,24 @@ public class App {
                     break;
                 }
                 case 1: {
-                    petShelter.feedPet();
-                    break;
-                }
-                case 2: {
                     petShelter.PetToSleep();
                     break;
                 }
-                case 3: {
+                case 2: {
                     petShelter.PlayWithPet();
                     break;
                 }
+                case 3: {
+                    break;
+                }
                 case 4: {
-                    // petShelter.adoptPet(pet.getName());
+                    petShelter.adoptPet(input.keyboardInt());
                     break;
                 }
                 case 5: {
                     AddPet addPet = new AddPet();
                     addPet.AddNewPet();
-                    // petShelter.addNewPet(pet);
+                    
                     break;
                 }
                 default: {
