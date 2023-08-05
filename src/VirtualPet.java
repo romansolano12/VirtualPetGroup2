@@ -24,14 +24,18 @@ public class VirtualPet extends Pet {
         this.petThirst = petThirst;
     }
     public void feedPet(){
-        petHunger--;
-        int health = getPetHealth() + 1 ;
+        petHunger+=3;
+        int health = getPetHealth() + 3 ;
         setPetHealth(health);
     }
     public void waterPet(){
-        petThirst--;
+        petThirst++;
         int health = getPetHealth() + 1 ;
         setPetHealth(health);
+    }
+    public void virtualTick(){
+petHunger--;
+petThirst--;
     }
     @Override
     public String toString(){
