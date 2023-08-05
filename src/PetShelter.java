@@ -21,16 +21,32 @@ Keyboard input = new Keyboard();
     }
 
     public void feedPet(){
-
+        
     }
     public void PetToSleep(){
-
+        for (Pet singlePet : displayPets.values()) {
+            singlePet.sleep(); 
+        }
     }
     public void PlayWithPet(){
-
+        for (Pet singlePet : displayPets.values()) {
+            singlePet.play(); 
+        }
     }
+
+    public void OilRoboticPet(){
+        
+    }
+
+    public void MaintenanceRoboticPet(){
+        
+    }
+
     public void adoptPet(int petKey){
+
+  System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         displayPets();
+      System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         this.displayPets.remove(petKey);
     }
     public void tick(){
