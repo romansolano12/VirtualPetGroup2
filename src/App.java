@@ -29,7 +29,7 @@ public class App {
             System.out.println("What would you like to do next?");
             int option = input.keyboardInt();
             int keyValue = -1;
-            while (option == 4) {
+            while (option == 7) {
 
                 System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 

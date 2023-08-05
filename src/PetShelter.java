@@ -72,10 +72,6 @@ public class PetShelter {
 
     }
 
-    public void MaintenanceRoboticPet() {
-
-
-    }
 
     public void adoptPet(int petKey) {
 

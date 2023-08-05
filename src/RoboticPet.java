@@ -28,12 +28,12 @@ public class RoboticPet extends Pet {
 
     // Increases oil Level when you oil a Robotic Pet
     public void oilPet() {
-        petOilLevel++;
+        petOilLevel+=3;
     }
 
     // Increases Maintenance level of Robotic pet
     public void maintenance() {
-        petMaintenance++;
+        petMaintenance+=3;
     }
     public void roboticTick(){
         petMaintenance--;

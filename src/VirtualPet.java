@@ -29,7 +29,7 @@ public class VirtualPet extends Pet {
         setPetHealth(health);
     }
     public void waterPet(){
-        petThirst++;
+        petThirst+=3;
         int health = getPetHealth() + 1 ;
         setPetHealth(health);
     }
