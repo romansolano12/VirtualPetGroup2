@@ -10,7 +10,7 @@ public class App {
         petShelter.addNewPet(pet2);
 
         while (true) {
-            petShelter.tick();
+            petShelter.tickPet();
             VirtualPet virtualPet = new VirtualPet(null, null, 0, 0, 0, 0, 0);
             RoboticPet roboticPet = new RoboticPet(null, null, 0, 0, 0, 0, 0);
             System.out.println(
@@ -28,7 +28,7 @@ public class App {
             System.out.println("What would you like to do next?");
             int option = input.keyboardInt();
             int keyValue = -1;
-            while (option == 3 || option == 4) {
+            while (option == 4) {
                 petShelter.displayPets();
                 System.out.println("pick a pet number");
                 keyValue = input.keyboardInt();
@@ -51,12 +51,12 @@ public class App {
                     break;
                 }
                 case 3: {
+                    petShelter.feedAllPets();
                     break;
-                }
+                    }
+                
                 case 4: {
-
                     petShelter.adoptPet(keyValue);
-
                     break;
                 }
                 case 5: {
