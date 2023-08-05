@@ -13,24 +13,30 @@ public class App {
             petShelter.tickPet();
             VirtualPet virtualPet = new VirtualPet(null, null, 0, 0, 0, 0, 0);
             RoboticPet roboticPet = new RoboticPet(null, null, 0, 0, 0, 0, 0);
-            System.out.println(
-                    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             petShelter.displayPets();
-            System.out.println(
-                    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             System.out.println("0. Exit Application");
             System.out.println("1. Put All Pets to Sleep");
             System.out.println("2. Play with All Pets");
-            System.out.println("3. Pick a pet");
-            System.out.println("4. Adopt a pet");
-            System.out.println("5. Admit a Virtual pet");
-            System.out.println("6. Admit a Robotic pet");
+            System.out.println("3. Feed Virtual Pets");
+            System.out.println("4. Give Water to Virtual Pets");
+            System.out.println("5. Oil Robotic Pets");
+            System.out.println("6. Give Maintenance Pets");
+            System.out.println("7. Adopt a pet");
+            System.out.println("8. Admit a Virtual pet");
+            System.out.println("9. Admit a Robotic pet");
             System.out.println("What would you like to do next?");
             int option = input.keyboardInt();
             int keyValue = -1;
             while (option == 4) {
+
+                System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
+
                 petShelter.displayPets();
-                System.out.println("pick a pet number");
+                System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                System.out.println("Pick a Pet: (By The Key)");
                 keyValue = input.keyboardInt();
                 pet = petShelter.getPet(keyValue);
                 if (pet != null) {
@@ -51,21 +57,38 @@ public class App {
                     break;
                 }
                 case 3: {
-                    petShelter.feedAllPets();
+
+                    petShelter.feedPet();
+
                     break;
                     }
                 
                 case 4: {
-                    petShelter.adoptPet(keyValue);
+
+                    petShelter.givePetWater();
                     break;
                 }
                 case 5: {
+                    petShelter.OilRoboticPet();
+                    break;
+                }
+                case 6: {
+                    petShelter.MaintenanceRoboticPet();
+                    break;
+                }
+                case 7: {
+
+
+                    petShelter.adoptPet(keyValue);
+                    break;
+                }
+                case 8: {
                     AddPet addPet = new AddPet();
                     virtualPet = addPet.NewVirtualPet();
                     petShelter.addNewPet(virtualPet);
                     break;
                 }
-                case 6: {
+                case 9: {
                     AddPet addPet = new AddPet();
                     roboticPet = addPet.NewRoboticPet();
                     petShelter.addNewPet(roboticPet);

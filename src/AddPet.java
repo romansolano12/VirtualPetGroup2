@@ -3,27 +3,39 @@ public class AddPet {
     String petType;
     Keyboard input = new Keyboard();
     
+    // Asks User (when adding a new virtual or robotic pet) if they want to add a Dog or a Cat
     public void CatOrDog() {
         System.out.println("What type of pet would you like to add? ");
         System.out.println("1. Dog");
         System.out.println("2. Cat");
         int option = input.keyboardInt();
+        // Sets the pet type to dog
         if (option == 1) {
             petType = "Dog";
-        } else if (option == 2) {
+        } 
+        // Stets the pet type to cat
+        else if (option == 2) {
             petType = "Cat";
-        } else {
+        }
+        // Else it loops back 
+        else {
             CatOrDog();
         }
     }
 
     // Add New Virtual Pet
     public VirtualPet NewVirtualPet() {
-
-        System.out.println("Add New Virtual Pet");
+        
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("|\tAdd New Virtual Pet\t|");
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        // Asks user if they want to add a Dog or a Cat
         CatOrDog();
+        // Asks User for pet name
         System.out.println("Enter Pet's Name: ");
+        // Sets pet Name
         String petName = input.keyboardString();
+        // Sets all attributes to 50%
         int petHealth = 50;
         int petHappiness = 50;
         int petSleep = 50;
@@ -36,7 +48,9 @@ public class AddPet {
 
     // Add New Robotic Pet
     public RoboticPet NewRoboticPet() {
-        System.out.println("Add New Robotic Pet");
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("|\tAdd New Robotic Pet\t|");
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         CatOrDog();
         System.out.println("Enter Pet's Name: ");
         String petName = input.keyboardString();

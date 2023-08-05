@@ -24,13 +24,16 @@ public class PetShelter {
         this.displayPets.put(addVirtualOrRoboticPet.getPetKey(), addVirtualOrRoboticPet);
     }
 
-    // public void feedPet(int petKey){
-    // System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-    // displayPets();
-    // System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 
-    // }
-    public void feedAllPets() {
+    public void givePetWater(){
+        for (Pet singlePet : displayPets.values()) {
+            if (singlePet instanceof VirtualPet) {
+                ((VirtualPet) singlePet).waterPet();
+            }
+        }
+    }
+    public void feedPet() {
+
         for (Pet singlePet : displayPets.values()) {
             if (singlePet instanceof VirtualPet) {
                 ((VirtualPet) singlePet).feedPet();
@@ -52,9 +55,25 @@ public class PetShelter {
 
     public void OilRoboticPet() {
 
+        for (Pet singlePet : displayPets.values()) {
+            if (singlePet instanceof RoboticPet) {
+                ((RoboticPet) singlePet).oilPet();
+            }
+        }
     }
 
     public void MaintenanceRoboticPet() {
+        for (Pet singlePet : displayPets.values()) {
+            if (singlePet instanceof RoboticPet) {
+                ((RoboticPet) singlePet).maintenance();
+            }
+        }
+
+
+    }
+
+    public void MaintenanceRoboticPet() {
+
 
     }
 
@@ -68,7 +87,10 @@ public class PetShelter {
         this.displayPets.remove(petKey);
     }
 
+
+
     public void tickPet() {
+
         for (Pet allPets : displayPets.values()) {
             allPets.tick();
         }

@@ -39,6 +39,6 @@ petThirst--;
     }
     @Override
     public String toString(){
-        return "| Key: " + getPetKey()+"\t| Pet Type: Virtual " + getPetType() + "\t| Name: "+ getPetName()+"\t| Health: "+getPetHealth()+"\t| Happiness: "+getPetHappiness()+"\t| Sleep: "+getPetSleep()+"\t| Hunger: "+petHunger+"\t\t| Thirst: "+petThirst + "\t| \n";
+        return "| Key: " + getPetKey()+"\t| Pet Type: Virtual " + getPetType() + "\t| Name: "+ getPetName()+"\t| Health: "+getPetHealth()+"%\t| Happiness: "+getPetHappiness()+"%\t| Sleep: "+getPetSleep()+"%\t| Hunger: "+petHunger+"%\t\t| Thirst: "+petThirst + "%\t | \n";
     }
 }
