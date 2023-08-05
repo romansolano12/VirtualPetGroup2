@@ -58,6 +58,7 @@ public abstract class Pet {
         this.petSleep = petSleep;
     }
 
+    // Constructor
     public Pet( String petType, String petName, int petHealth, int petHappiness, int petSleep) {
         this.petKey = petCounter++;
         this.petType = petType;
@@ -71,17 +72,19 @@ public abstract class Pet {
      * this function will increase pet sleep by 1 and pet health by 1
      */
     public void sleep() {
-        petSleep++;
-        petHealth++;
+        petSleep += 3;
+        petHealth += 3;
     }
 
     /**
      * this function will increase pet happiness by 1 and pet health by 1
      */
     public void play() {
-        petHappiness++;
-        petHealth++;
+        petHappiness += 3;
+        petHealth += 3;
     }
+
+    
     public void tick(){
         petHappiness--;
         petHealth--;
