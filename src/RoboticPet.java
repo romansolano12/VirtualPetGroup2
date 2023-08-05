@@ -33,7 +33,10 @@ public class RoboticPet extends Pet {
     public void maintenance() {
         petMaintenance++;
     }
-
+    public void roboticTick(){
+        petMaintenance--;
+        petOilLevel--;
+    }
     @Override
     public String toString(){
         return "| Key: " + getPetKey() + "\t| Pet Type: Robotic " + getPetType() +"\t| Name: "+getPetName()+"\t| Health: "+getPetHealth()+ "\t| Happiness: "+getPetHappiness()+"\t| Sleep: "+getPetSleep() + "\t| Maintenance: "+petMaintenance
