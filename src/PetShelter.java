@@ -13,7 +13,9 @@ Keyboard input = new Keyboard();
         System.out.println(pet);
     }
     }
-
+    public Pet getPet(int keyValue){
+        return this.displayPets.get(keyValue);
+    }
     public void addNewPet(Pet addVirtualOrRoboticPet) {
         this.displayPets.put(addVirtualOrRoboticPet.getPetKey(), addVirtualOrRoboticPet);
     }
@@ -41,12 +43,15 @@ Keyboard input = new Keyboard();
     }
 
     public void adoptPet(int petKey){
-        System.out.println("Choose a pet From the List: ");
-        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
+  System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         displayPets();
-        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-        System.out.println("Which Pet Would You Like To Adopt?(Type the Key Number of The Pet) ");
-        petKey = input.keyboardInt();
+      System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         this.displayPets.remove(petKey);
+    }
+    public void tick(){
+        for(Pet allPets : displayPets.values()){
+            allPets.tick();
+        }
     }
 }

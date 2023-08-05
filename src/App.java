@@ -4,14 +4,20 @@ public class App {
         Keyboard input = new Keyboard();
         VirtualPet pet1 = new VirtualPet("Dog", "Ace", 50, 50, 50, 50, 50);
         RoboticPet pet2 = new RoboticPet("Cat", "Annie", 50, 50, 50, 50, 50);
+        Pet pet;
+
         petShelter.addNewPet(pet1);
         petShelter.addNewPet(pet2);
         // Pet newPet= new Pet();
 
         while (true) {
+            petShelter.tick();
+          
+
             VirtualPet pet3 = new VirtualPet(null, null, 0, 0, 0, 0, 0);
             RoboticPet pet4 = new RoboticPet(null, null, 0, 0, 0, 0, 0);
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
             petShelter.displayPets();
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             System.out.println("0. Exit Application");
@@ -23,6 +29,17 @@ public class App {
             System.out.println("6. Admit a Robotic pet");
             System.out.println("What would you like to do next?");
             int option = input.keyboardInt();
+            int keyValue = -1;
+            while (option == 3 || option == 4) {
+                petShelter.displayPets();
+                System.out.println("pick a pet number");
+                keyValue = input.keyboardInt();
+                pet = petShelter.getPet(keyValue);
+                if (pet != null) {
+                    break;
+                }
+                System.out.println("I cant find this pet try again");
+            }
             switch (option) {
                 case 0: {
                     break;
@@ -39,19 +56,21 @@ public class App {
                     break;
                 }
                 case 4: {
-                    petShelter.adoptPet(0);
+
+                    petShelter.adoptPet(keyValue);
+
                     break;
                 }
                 case 5: {
                     AddPet addPet = new AddPet();
-                    pet3 = addPet.NewVirtualPet();
-                    petShelter.addNewPet(pet3);
+                    virtualPet = addPet.NewVirtualPet();
+                    petShelter.addNewPet(virtualPet);
                     break;
                 }
                 case 6: {
                     AddPet addPet = new AddPet();
-                    pet4 = addPet.NewRoboticPet();
-                    petShelter.addNewPet(pet4);
+                    roboticPet = addPet.NewRoboticPet();
+                    petShelter.addNewPet(roboticPet);
                     break;
                 }
                 default: {
