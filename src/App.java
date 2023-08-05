@@ -8,18 +8,16 @@ public class App {
 
         petShelter.addNewPet(pet1);
         petShelter.addNewPet(pet2);
-        // Pet newPet= new Pet();
 
         while (true) {
             petShelter.tick();
-          
-
-            VirtualPet pet3 = new VirtualPet(null, null, 0, 0, 0, 0, 0);
-            RoboticPet pet4 = new RoboticPet(null, null, 0, 0, 0, 0, 0);
-            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-
+            VirtualPet virtualPet = new VirtualPet(null, null, 0, 0, 0, 0, 0);
+            RoboticPet roboticPet = new RoboticPet(null, null, 0, 0, 0, 0, 0);
+            System.out.println(
+                    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             petShelter.displayPets();
-            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            System.out.println(
+                    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             System.out.println("0. Exit Application");
             System.out.println("1. Put All Pets to Sleep");
             System.out.println("2. Play with All Pets");
